@@ -2,21 +2,21 @@ package user
 
 import (
 	"context"
-	"database/sql"
 )
 
+// This file is only an example of a starting point for a repository
+
 type Repository struct {
-	db *sql.DB
+	db *InMemDB
 }
 
-func NewPostgresRepository(url string) (*sql.DB, error) {
-	db, err := sql.Open("postgres", url)
-	if err != nil {
-		return nil, err
+func NewRepository() RepositoryPort {
+	db := make(InMemDB)
+	return &Repository{
+		db: &db,
 	}
-	return db, nil
 }
 
-func (r *Repository) CreateReport(ctx context.Context) error {
+func (r *Repository) CreateUser(ctx context.Context) error {
 	return nil
 }

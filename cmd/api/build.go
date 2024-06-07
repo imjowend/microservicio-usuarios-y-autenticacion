@@ -7,9 +7,9 @@ import (
 
 func Build(dep *Dependencies) *gin.Engine {
 	r := gin.Default()
-	v1 := r.Group("/api/v1/")
+	v1 := r.Group("/api/v1/users")
 	{
-		v1.POST("/create-user", user.CreateUser)
+		v1.POST("/create", user.CreateUser)
 	}
 	log.Println("Running server on port:" + dep.RouterPort + "...")
 	if err := r.Run(dep.RouterPort); err != nil {
