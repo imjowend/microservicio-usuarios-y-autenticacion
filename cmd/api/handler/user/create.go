@@ -20,7 +20,7 @@ func NewRestHandler(ucs ucs.UseCasePort) *RestHandler {
 
 func (h *RestHandler) CreateUser(c *gin.Context) {
 
-	if err = h.ucs.CreateUser(c.Request.Context(), *user.User); err != nil {
+	if err := h.ucs.CreateUser(c.Request.Context(), *user.User); err != nil {
 		c.JSON(http.StatusInternalServerError, err.Error())
 		return
 	}

@@ -10,9 +10,9 @@ type UseCase struct {
 	user user.RepositoryPort
 }
 
-func NewUseCase(u user.RepositoryPort) UseCasePort {
+func NewUseCase(r user.RepositoryPort) UseCasePort {
 	return &UseCase{
-		user: u,
+		user: r,
 	}
 }
 

@@ -5,6 +5,6 @@ import (
 	"github.com/imjowend/microservicio-usuarios-y-autenticacion/internal/core/user"
 )
 
-type UseCasePort struct {
+type UseCasePort interface {
 	CreateUser(context.Context, *user.User) error
 }

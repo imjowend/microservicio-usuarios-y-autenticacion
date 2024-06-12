@@ -3,7 +3,7 @@ package api
 import (
 	"errors"
 	"fmt"
-	rep "github.com/imjowend/microservicio-usuarios-y-autenticacion/internal/core/user"
+	usr "github.com/imjowend/microservicio-usuarios-y-autenticacion/internal/core/user"
 	"github.com/joho/godotenv"
 	"os"
 )
@@ -54,7 +54,7 @@ func Config() (*Dependencies, error) {
 	}
 
 	return &Dependencies{
-		Repository: rep.NewPostgresRepository(),
+		Repository: usr.NewRepository(),
 		DBConfig:   dbConfig,
 		RouterPort: routerPort,
 	}, nil
